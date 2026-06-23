@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-onyx text-mist font-body antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-heading text-cloud;
+  }
+  ::selection {
+    @apply bg-amber-glow/30 text-cloud;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+  }
+  .section-pad {
+    @apply py-24 md:py-32;
+  }
+  .eyebrow {
+    @apply text-amber-glow uppercase tracking-[0.3em] text-xs font-semibold;
+  }
+  .heading-xl {
+    @apply text-4xl md:text-6xl font-bold leading-[1.05] tracking-tight;
+  }
+  .btn-amber {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-amber-glow px-7 py-3
+      font-semibold text-onyx transition-all duration-300 hover:shadow-glow hover:-translate-y-0.5;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/15
+      px-7 py-3 font-semibold text-cloud transition-all duration-300
+      hover:border-amber-glow hover:text-amber-glow;
+  }
+  .card {
+    @apply rounded-2xl bg-slate-card border border-white/5;
+  }
+  .input {
+    @apply w-full rounded-xl bg-onyx/60 border border-white/10 px-4 py-3 text-cloud
+      placeholder:text-mist/50 outline-none transition focus:border-amber-glow
+      focus:ring-1 focus:ring-amber-glow/50;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #0f1115; }
+::-webkit-scrollbar-thumb { background: #2a2f3a; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #F5A623; }
+
+/* Leaflet dark tweaks */
+.leaflet-container { background: #0f1115; }
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  background: #1C1F26; color: #F8F9FA;
+}
+.leaflet-control-attribution { background: rgba(15,17,21,0.7) !important; color: #6b7280 !important; }
+.leaflet-control-attribution a { color: #9ca3af !important; }
